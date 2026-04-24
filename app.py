@@ -34,7 +34,7 @@ h1, h2, h3 { font-family: 'DM Serif Display', serif; }
     letter-spacing: -1px;
     margin-bottom: 0.2rem;
 }
-.hero p { color: #666; font-size: 0.95rem; }
+.hero p { color: #ffffff; font-size: 0.95rem; }
 .accent { color: #e05c5c; }
 
 .card {
@@ -46,7 +46,7 @@ h1, h2, h3 { font-family: 'DM Serif Display', serif; }
 }
 
 .section-label {
-    color: #666;
+    color: #ffffff;
     font-size: 0.75rem;
     letter-spacing: 0.1em;
     text-transform: uppercase;
