@@ -53,6 +53,15 @@ h1, h2, h3 { font-family: 'DM Serif Display', serif; }
     margin-bottom: 1rem;
 }
 
+/* Semua label input jadi putih (fix semua komponen) */
+div[data-baseweb="input"] label,
+div[data-baseweb="select"] label,
+div[data-baseweb="base-input"] label,
+label {
+    color: #ffffff !important;
+    font-weight: 500 !important;
+}
+
 .result-high {
     background: linear-gradient(135deg, #2a0f0f, #1a0808);
     border: 1px solid #c94a4a;
