@@ -102,6 +102,13 @@ h1, h2, h3 { font-family: 'DM Serif Display', serif; }
     border-bottom-color: #e05c5c !important;
 }
 
+* Label input jadi putih */
+.stNumberInput label,
+.stSelectbox label {
+    color: #ffffff !important;
+    font-weight: 500;
+}
+
 .stDownloadButton > button {
     background-color: #1f1f1f !important;
     color: #f0ede8 !important;
