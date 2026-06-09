@@ -239,10 +239,10 @@ with tab1:
                                 format_func=lambda x: "Male" if x == 1 else "Female")
         chestpain         = st.selectbox("Chest Pain Type", [0,1,2,3],
                                 format_func=lambda x: {
-                                    3:"Typical Angina",
-                                    2:"Atypical Angina",
-                                    1:"Non-Anginal",
-                                    0:"Asymptomatic"
+                                    0:"Typical Angina",
+                                    1:"Atypical Angina",
+                                    2:"Non-Anginal",
+                                    3:"Asymptomatic"
                                 }[x])
         restingBP         = st.number_input("Resting Blood Pressure (mmHg)", 50, 250, 120)
 
