@@ -216,6 +216,10 @@ st.markdown("""
 <hr class="divider">
 """, unsafe_allow_html=True)
 
+# ========== TAMBAHKAN PERINGATAN DI SINI ==========
+st.warning("⚠️ **Peringatan Penting:** Alat deteksi dini ini hanya untuk prediksi awal. Hasil yang lebih akurat harus melalui konsultasi dengan dokter.")
+# =================================================
+
 if not model_loaded:
     st.error("Model files not found. Place `best_model.pkl` and `impute_vals.pkl` in the same directory.")
     st.stop()
