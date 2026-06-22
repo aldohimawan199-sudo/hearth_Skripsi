@@ -293,30 +293,13 @@ with tab2:
 
     uploaded = st.file_uploader("", type=['csv', 'xlsx'], label_visibility="collapsed")
 
-   if uploaded:
-    try:
-        if uploaded.name.endswith('.csv'):
-            try:
-                df_up = pd.read_csv(uploaded)
+    if uploaded:
+        try:
+            df_up = pd.read_csv(uploaded) if uploaded.name.endswith('.csv') else pd.read_excel(uploaded)
+            st.markdown(f"<p style='color:#555; font-size:0.82rem;'>{len(df_up)} rows detected</p>", unsafe_allow_html=True)
+            st.dataframe(df_up.head(), use_container_width=True)
+            st.markdown("</div>", unsafe_allow_html=True)
 
-                # Jika terbaca hanya 1 kolom, kemungkinan delimiter adalah ;
-                if len(df_up.columns) == 1:
-                    uploaded.seek(0)
-                    df_up = pd.read_csv(uploaded, sep=';')
-
-            except Exception:
-                uploaded.seek(0)
-                df_up = pd.read_csv(uploaded, sep=';')
-
-        else:
-            df_up = pd.read_excel(uploaded)
-
-        df_up.columns = df_up.columns.str.strip()
-
-        st.markdown(
-            f"<p style='color:#555; font-size:0.82rem;'>{len(df_up)} rows detected</p>",
-            unsafe_allow_html=True
-        )
             if st.button("Run Prediction", key="btn_batch"):
                 missing = [c for c in FEATURE_COLS if c not in df_up.columns]
                 if missing:
