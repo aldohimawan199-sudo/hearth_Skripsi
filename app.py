@@ -295,7 +295,22 @@ with tab2:
 
     if uploaded:
         try:
-            df_up = pd.read_csv(uploaded) if uploaded.name.endswith('.csv') else pd.read_excel(uploaded)
+           if uploaded.name.endswith('.csv'):
+    try:
+        df_up = pd.read_csv(uploaded)
+
+        if len(df_up.columns) == 1:
+            uploaded.seek(0)
+            df_up = pd.read_csv(uploaded, sep=';')
+
+    except:
+        uploaded.seek(0)
+        df_up = pd.read_csv(uploaded, sep=';')
+
+else:
+    df_up = pd.read_excel(uploaded)
+
+df_up.columns = df_up.columns.str.strip()
             st.markdown(f"<p style='color:#555; font-size:0.82rem;'>{len(df_up)} rows detected</p>", unsafe_allow_html=True)
             st.dataframe(df_up.head(), use_container_width=True)
             st.markdown("</div>", unsafe_allow_html=True)
