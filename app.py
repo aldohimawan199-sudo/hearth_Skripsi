@@ -295,7 +295,7 @@ with tab2:
 
     if uploaded:
         try:
-            df_up = pd.read_csv(uploaded) if uploaded.name.endswith('.csv') else pd.read_excel(uploaded)
+            df_up = pd.read_csv(uploaded, sep=';') if uploaded.name.endswith('.csv') else pd.read_excel(uploaded)
             st.markdown(f"<p style='color:#555; font-size:0.82rem;'>{len(df_up)} rows detected</p>", unsafe_allow_html=True)
             st.dataframe(df_up.head(), use_container_width=True)
             st.markdown("</div>", unsafe_allow_html=True)
