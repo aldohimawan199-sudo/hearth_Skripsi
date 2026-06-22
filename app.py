@@ -243,9 +243,9 @@ with tab1:
                                 format_func=lambda x: "Male" if x == 1 else "Female")
         chestpain         = st.selectbox("Chest Pain Type", [0,1,2,3],
                                 format_func=lambda x: {
-                                    0:"Typical Angina (Nyeri dada khas di jantung akibat aktivitas fisik)",
-                                    1:"Atypical Angina (Nyeri dada tidak khas pada bagian perut,punggung,lengan saat aktivitas fisik)",
-                                    2:"Non-Anginal(Nyeri dada tidak berasal dari jantung bisa berasal dari otot,tulang,saraf)",
+                                    0:"Typical Angina (Nyeri dada khas seperti tertekan / sesak akibat aktivitas fisik)",
+                                    1:"Atypical Angina (Nyeri dada tidak khas pada rahang,punggung,perit saat istirahat)",
+                                    2:"Non-Anginal(Nyeri dada seperti ditusuk pada satu titik)",
                                     3:"Asymptomatic (Tidak ada Nyeri dada)"
                                 }[x])
         restingBP         = st.number_input("Resting Blood Pressure (mmHg)", 50, 250, 120)
